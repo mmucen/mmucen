@@ -1,0 +1,15 @@
+float u = 0, v =0;
+void setup(){
+  size(800,800);
+  background(250,0,200);
+}
+void draw(){
+  float z = 800;
+  float x = random(801);
+  float y = random(801);
+  if (z>750){
+    line (x,y,u,v);
+    u = x;
+    v = y;
+  }
+}
