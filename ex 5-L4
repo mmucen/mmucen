@@ -1,0 +1,31 @@
+import javax.swing.JOptionPane;
+void setup () {
+  int max, column, row, x = 20, y = 20;
+  size (800, 800);
+  background(0);
+  do {
+    String answer = JOptionPane.showInputDialog("How many rows would you like in your times table?"+
+      "\nEnter a number between 1 and 16.");
+    max = Integer.parseInt(answer);
+  } while (max < 1 && max >16);
+  // Display the header row of the table.
+  text("X", x, y);
+  x += 50;
+  for (column=1; column<=max; column++) {
+    text(column, x, y);
+    x+=50;
+  }
+  for (row=1; row<=max; row++) {
+    text(row, 20, y+=50);
+  }
+ 
+  for (row=1; row<=max; row++) {
+    for (column=1; column<=max; column++) {
+      if (row<=column) {
+        int product=row*column;
+        int space=50;
+        text(product, row*space+20, column*space+20);
+      }
+    }
+  }
+}
