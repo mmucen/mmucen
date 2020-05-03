@@ -1,0 +1,68 @@
+int x = 200;
+int y = 80;
+int b = 90;
+int a = 315;
+int c = 185;
+int d = 180;
+int e = 50;
+int f = 130;
+int g = 115;
+int h = 215;
+int i = 110;
+int j = 155;
+int k = 160;
+int l = 170;
+int m = 240;
+int n = 290;
+int o = 245;
+int z = 230;
+int q = 30;
+int r = 35;
+int s = 15;
+int t = 220;
+int u = 60;
+int v = 25;
+void setup(){
+  
+  size (400,400);
+}
+void draw(){
+  background(150);
+  rectMode(CENTER);
+  rect(x,d,y,f);
+rect(x,e,y,y);
+line(c,b,c,g);
+line(h,b,h,g);
+line(i,j,k,j);
+line(i,l,k,l);
+line(m,j,n,j);
+line(m,l,n,l);
+line(l,o,l,a);
+line(c,o,c,a);
+line(h,o,h,a);
+line(z,o,z,a);
+ellipse(d,r,s,q);
+ellipse(t,r,s,q);
+arc(x,u,v,v,0,PI);
+a -= 1;
+b -= 1;
+c -= 1;
+d -= 1;
+e -= 1;
+g -= 1;
+h -= 0.000000001;
+i -= 1;
+h -= 1;
+j -= 1;
+k -= 1;
+l -= 1;
+m -= 1;
+n -= 1;
+o -= 1;
+z -= 1;
+r -= 1;
+t -= 1;
+u -= 1;
+x -= 1;
+
+}
