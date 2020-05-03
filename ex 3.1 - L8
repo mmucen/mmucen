@@ -1,0 +1,28 @@
+class Point 
+{
+  float X;
+  float Y;
+  float Z;
+}
+void FillPoint (Point p)
+{
+  p.X = random(1,100);
+  p.Y = random(1,100);
+  p.Z = random(1,100);
+}
+float DistanceBetweenPoints(Point pt1, Point pt2)
+{
+  float a = 0;
+  a+=pow((pt1.X - pt2.X),2);
+  a+=pow((pt1.Y - pt2.Y),2);
+  a+=pow((pt1.Z - pt2.Z),2);
+  return sqrt(a);
+}
+void setup()
+{
+  Point A =new Point();
+  Point B =new Point();
+  FillPoint(A);
+  FillPoint(B);
+  print(DistanceBetweenPoints(A,B));
+}
