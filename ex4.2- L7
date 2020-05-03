@@ -1,0 +1,20 @@
+void setup ()
+{
+  float [] first_array = {6.7,5.9,10,23,44,4.6,9.1};
+  float [] second_array = {11,12,13,14,15,16,17};
+  swapArrays(first_array, second_array);
+  println(first_array);
+  println();
+  println(second_array);
+}
+void swapArrays ( float [] x, float [] y){
+  if (x.length==y.length){
+    for(int i= 0; i<x.length; i++){
+      float res = x[i];
+      x[i]=y[i];
+      y[i]=res;
+    }
+  }else{
+    println("Can't swap arrays of different length");
+  }
+}
