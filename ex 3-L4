@@ -1,0 +1,18 @@
+import javax.swing.JOptionPane;
+String n;
+n = JOptionPane.showInputDialog("enter a number greater than or equal to 3");
+  int j=Integer.parseInt(n.trim());
+int A = 0;
+int B = 1;
+int T = 1;
+do{
+ n= JOptionPane.showInputDialog("enter a number greater than or equal to 3");
+  j= Integer.parseInt(n);
+}while(j<3);
+do{
+  println(B);
+  T = A+B;
+  A = B;
+  B = T;
+  
+}while (T<=j);
