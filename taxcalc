@@ -1,0 +1,117 @@
+// This program prompts and reads a province and a taxable income.  Then,
+// using if-else structures, the tax rate is computed for the province
+// and the taxable income.  The tax rate and the net income are illustrated
+// using a simple bar chart 
+
+import javax.swing.JOptionPane;
+
+
+//Input Variables
+String prov_id = "";                  //province_id will contain the user input for the province (E.g. 'AB'). 
+float gross_income = 0;               //gorss_income contains the user input for gross income (E.g. 30000). 
+
+//Output Variables:
+//You will store the result of your analysis and calculations in these variables
+float tax_rate = 0;                        //Variable tax_rate will hold the tax_rate percentage. You will assign a value for tax_rate based on the Taxable Income (Table 1) table given in the studio project document. 
+                                           //The value of tax ranges between 0 to 1 (E.g. for Alberta, income of equal or less than $40000 tax = 0.25)
+
+float net_income = 0;                     //Net income is calculated based on tax_rate. It is the take-home income after taxes are deducted. 
+                                          //i.e. net_income = gross_income * (1 - tax_rate); 
+                                          
+float tax_amount = 0;                    //tax amount is the amount of taxes paid based on gross income depending on the province.
+                                        //i.e. tax_amount = gross_income * tax_rate;
+
+// prompt for and read the province id 
+prov_id = JOptionPane.showInputDialog("Please enter your province's two-letter abbreviation (e.g., AB for Alberta): ");
+    
+// prompt for and read the gross income
+String answer = JOptionPane.showInputDialog("Please enter your taxable income: ");
+
+//convert user input to folat
+gross_income = Float.parseFloat(answer);
+  
+
+
+  // Alberta
+  if ( prov_id.equals("AB") || prov_id.equals("ab"))
+  {
+    if (gross_income>0 && gross_income<= 40000){
+      tax_rate = 25.0;
+    }else if (gross_income>40000 && gross_income<=80000){
+      tax_rate = 32.0;
+    }else if (gross_income>80000 && gross_income<=120000){
+      tax_rate = 36.0;
+    }else if (gross_income>120000){
+      tax_rate = 39.0;
+    }
+    print(tax_rate);
+
+  }
+
+if ( prov_id.equals("BC") || prov_id.equals("bc"))
+  {
+    if(gross_income>0 && gross_income<=20000){
+      tax_rate = 20.0;
+    }else if(gross_income>20000 && gross_income<=35000){
+      tax_rate = 22.5;
+    }else if (gross_income>35000 && gross_income<=50000){
+      tax_rate = 30.0;
+    }else if (gross_income>50000 && gross_income<=65000){
+      tax_rate = 32.5;
+    }else if (gross_income>65000 && gross_income<=80000){
+      tax_rate = 36.5;
+    }else if (gross_income>80000 && gross_income<=100000){
+      tax_rate = 39.3;
+    }else if (gross_income>100000 && gross_income<=120000){
+      tax_rate = 41.0;
+    }else if (gross_income>120000){
+      tax_rate = 44.0;
+    }
+    print(tax_rate);
+  }
+if ( prov_id.equals("SK") || prov_id.equals("sk")|| prov_id.equals("ON")|| prov_id.equals("on"))
+{
+  if(gross_income>0 && gross_income<=40000){
+    tax_rate = 25.0;
+  }else if (gross_income>40000 && gross_income<=60000){
+    tax_rate = 30.0;
+  }else if (gross_income>60000 && gross_income<=80000){
+    tax_rate = 35.0;
+  }else if (gross_income>80000 && gross_income<=100000){
+    tax_rate = 40.0;
+  }else if (gross_income>100000 && gross_income<=120000){
+    tax_rate = 45.0;
+  }else if (gross_income>120000){
+    tax_rate = 50.0;
+  }
+  print(tax_rate);
+}
+size (500,500);
+int rect = 350;
+fill(#621420);
+text("Province:",80,100);
+text(prov_id,180,100);
+fill(#1913F0);
+text("Gross Income:",80,130);
+text("$"+ gross_income,180,130);
+rect(80,400,rect,10);
+fill(0);
+text("Tax rate:",80,160);
+text(tax_rate + "%",180,160);
+fill(#10CB04);
+rect(80,350,rect,10);
+text("Net income:",80,220);
+text("$"+(gross_income-(tax_rate/100)*(gross_income)),180,220);
+fill(#F00C14);
+text("Tax amount:",80,190);
+text("$"+(tax_rate/100)*(gross_income),180,190);
+rect(80,350,rect*(tax_rate/100),10);
+
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //
+  //  Implement the rest ofthe if-else structure to calculate the tax rate for remaining provinces  
+  //
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+// Draw a bar chart to illustrate the user tax information as shown in the example in the lab assignment 
