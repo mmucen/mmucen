@@ -1,0 +1,22 @@
+import javax.swing.JOptionPane;
+size(600,600);
+background(0,0,255);
+String userInput;
+userInput = JOptionPane.showInputDialog("Enter Value of x coordinate:");
+int EnterValueofxcoordinate = Integer.parseInt(userInput);
+userInput = JOptionPane.showInputDialog("Enter Value of y coordinate:");
+int EnterValueofycoordinate = Integer.parseInt(userInput);
+userInput = JOptionPane.showInputDialog("Enter radius of circle:");
+int Enterradiusofcircle = Integer.parseInt(userInput);
+
+circle(EnterValueofxcoordinate,EnterValueofycoordinate,Enterradiusofcircle); 
+line(EnterValueofxcoordinate,EnterValueofycoordinate-Enterradiusofcircle/2,EnterValueofxcoordinate,EnterValueofycoordinate);
+double a = PI * Enterradiusofcircle * Enterradiusofcircle;
+double r = Enterradiusofcircle;
+
+String area = "Area = " + a;
+fill(0,0,0);
+text("Area = "+a,EnterValueofxcoordinate,EnterValueofycoordinate);
+String radius = "Radius = " + r;
+fill(0,0,0);
+text("Radius ="+r,EnterValueofxcoordinate,EnterValueofycoordinate/1.2);
