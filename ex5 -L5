@@ -1,0 +1,23 @@
+void setup(){
+String str= "ENGG 233, FALL 2019, UCalgary";
+String lowerStr = allLowercase(str);
+  println(lowerStr);
+}
+String allLowercase (String i)
+{
+  String temp="";
+ for (int j = 0; j <i.length(); j ++){
+  if (i.charAt(j)<='Z'&&i.charAt(j)>='A'){
+  temp += ((char)(i.charAt(j)+32));
+  }
+  else if(i.charAt(j)>'a'&&i.charAt(j)<'z'){
+    temp += i.charAt(j);
+  }else {
+    temp += i.charAt(j);
+  }
+ }
+    return temp;
+
+}
+
+ 
