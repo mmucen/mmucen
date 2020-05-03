@@ -1,0 +1,28 @@
+PShape first;
+PShape second;
+int ybegin = 250;
+int x1 = 0;
+int y1 = 240;
+void setup(){
+  size(500,500);
+  first = createShape(QUAD, 10,0,20,10,10,20,0,10);
+  first.setFill(0);
+  first.setStroke(true);
+  
+  second = createShape(QUAD,10,0,20,10,10,20,0,10);
+  second.setFill(255);
+  second.setStroke(true);
+}
+  
+  void draw(){
+    int ind = 0;
+    for(int y =240; y>=0;y-=20){
+      for(int x= 0; x+(ind)<(500-ind); x+=20){
+      shape(first,x+ind,y);
+    }
+    for (int x =10; x+(ind)<(480-ind);x+=20){
+      shape(second,x+ind,y-10);
+    }
+    ind+=20;
+  }
+  }
