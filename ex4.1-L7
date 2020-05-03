@@ -1,0 +1,24 @@
+void setup()
+{
+  float [] array = {6.7, 5.9, 10, 23,44,4.6,9.1,100,79};
+  array = insertAt(array, 255,3);
+  println(array);
+}
+float [] insertAt(float[]a, float b, int x)
+{
+  if (x>=0 && x <a.length){
+    int i = 0;
+    float [] temp = new float[a.length+1];
+    while(i<x){
+      temp[i++]=a[i-1];
+    }
+    temp[x]=b;
+    while (i<a.length){
+      temp[++i]=a[i-1];
+    }
+    return temp;
+  }else{
+    println("out of bounds error");
+    return a;
+  }
+}
