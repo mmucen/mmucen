@@ -1,0 +1,17 @@
+void setup ()
+{
+  size(200,200);
+  int array1 [] [] = {{0,1,0,1,1},{1,0,1,0},{0,1},{1,0,1,1,0,0},{0,0,1},{1,1,1,0,0}};
+  int array2[]=new int[array1.length];
+  for(int i = 0; i<array1.length; i++)
+  array2[i]= array1[i].length;
+  float r = (width - array1.length * 20) / 2.0;
+  float e = (width - max(array2) * 20) / 2.0;
+  for(int i = 0; i<array1.length; i++)
+  for(int j = 0; j<array1[i].length; j++){
+    fill(0);
+    if(array1[i][j]==1)
+    fill(255);
+    rect (r + j * 20, e + i * 20, 20 ,20);
+  }
+}
