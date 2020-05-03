@@ -1,0 +1,9 @@
+void setup(){
+int [] array1 = {3,4,5,20,10};
+for (int j =0; j<array1.length;j++)
+  for (int i =j+1; i<array1.length;i++)
+    if(array1[j]==array1[i]){
+      println("The array is not unique");
+    return;}
+  println("The array is unique");
+}
